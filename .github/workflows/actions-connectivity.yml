@@ -1,0 +1,17 @@
+name: Minimal Actions connectivity check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  connectivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm runner is available
+        run: echo "GitHub Actions runner connected successfully"
